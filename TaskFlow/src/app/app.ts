@@ -20,6 +20,10 @@ export class App {
     this.title = nouveauTitre;
   }
 
+  supprimerTitre() {
+    this.title = '';
+  }
+
   viderTaches() {
     this.tasks = [];
   }

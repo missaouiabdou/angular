@@ -2,9 +2,12 @@
 
 <input #nouveauTitreInput type="text">
 <button (click)="changeTitre(nouveauTitreInput.value)">Changer le titre</button>
+<button (click)="supprimerTitre()" [disabled]="title === ''">Supprimer le titre</button>
+
+<h2>Mes Tâches</h2>
 
 <button (click)="viderTaches()" [disabled]="tasks.length === 0">Vider</button>
-<button (click)="reinitialiserTaches()">Réinitialiser</button>
+<button (click)="reinitialiserTaches()" [disabled]="tasks.length > 0">Réinitialiser</button>
 
 <ul>
   @for (task of tasks; track task.id) {
