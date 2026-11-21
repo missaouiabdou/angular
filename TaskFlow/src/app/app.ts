@@ -1,10 +1,11 @@
 import { Component, signal, computed } from '@angular/core';
 import { DatePipe, UpperCasePipe } from '@angular/common';
 import { Task } from './task.model';
+import { Catalogue } from './catalogue/catalogue';
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, UpperCasePipe],
+  imports: [DatePipe, UpperCasePipe, Catalogue],
   templateUrl: './app.html'
 })
 export class App {

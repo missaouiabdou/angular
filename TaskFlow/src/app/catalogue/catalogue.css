@@ -1,0 +1,45 @@
+.catalogue {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.infos {
+  margin-bottom: 20px;
+}
+
+.infos span {
+  margin-right: 20px;
+}
+
+.produits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.carte {
+  width: 180px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.prix {
+  color: green;
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

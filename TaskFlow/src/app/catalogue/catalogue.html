@@ -1,0 +1,22 @@
+<div class="catalogue">
+  <h2>Catalogue</h2>
+
+  <div class="infos">
+    <span>{{ nombreProduits() }} produit(s)</span>
+    <span>Panier : {{ panier() }}</span>
+    <button (click)="viderPanier()" [disabled]="panier() === 0">Vider le panier</button>
+  </div>
+
+  <div class="produits">
+    @for (produit of produits(); track produit.id) {
+      <div class="carte">
+        <h3>{{ produit.nom }}</h3>
+        <p class="prix">{{ produit.prix | currency:'EUR' }}</p>
+        <p>Stock : {{ produit.stock }}</p>
+        <button (click)="ajouterAuPanier()" [disabled]="produit.stock === 0">Ajouter au panier</button>
+      </div>
+    } @empty {
+      <p>Aucun produit</p>
+    }
+  </div>
+</div>
