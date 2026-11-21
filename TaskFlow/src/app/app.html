@@ -6,11 +6,16 @@
 
 <h2>Mes Tâches</h2>
 
-<button (click)="viderTaches()" [disabled]="tasks.length === 0">Vider</button>
-<button (click)="reinitialiserTaches()" [disabled]="tasks.length > 0">Réinitialiser</button>
+<input #nouvelleTacheInput type="text">
+<button (click)="ajouterTache(nouvelleTacheInput.value)">Ajouter</button>
+
+<button (click)="viderTaches()" [disabled]="tasks().length === 0">Vider</button>
+<button (click)="reinitialiserTaches()" [disabled]="tasks().length > 0">Réinitialiser</button>
+
+<p>{{ count() }} tâche(s)</p>
 
 <ul>
-  @for (task of tasks; track task.id) {
+  @for (task of tasks(); track task.id) {
     <li>{{ task.title | uppercase }} - {{ task.dueDate | date:'dd/MM/yyyy' }} - {{ task.priority }}</li>
   } @empty {
     <p>Aucune tâche pour l'instant</p>
